@@ -1,0 +1,73 @@
+.homepageContainer {
+  width: 100%;
+  height: calc(100vh - 150px);
+  max-height: 1400px;
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: flex;
+  text-align: center;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin-top: -50px;
+
+  h1 {
+    width: 100%;
+    font-size: 3.8rem;
+    letter-spacing: 0.15rem;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 5px;
+    padding-bottom: 0.2rem;
+    margin: 6rem 0 2rem 0;
+  }
+}
+
+.shoeContainerNews {
+  // width: calc(33.33333333% - 20px);
+  width: 500px;
+  margin: 20px 10px;
+  padding: 10px;
+  align-items: flex-start;
+  // border: 1px solid #d8e2dc;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-align: center;
+  flex-direction: column;
+}
+
+.shoeInfoContainer {
+  flex-direction: column;
+
+  .shoeInfoText {
+    width: 100%;
+    text-align: start;
+    padding: 0.3rem 0;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    color: gray;
+  }
+}
+
+.carouselContainer {
+  max-height: 800px;
+  max-width: 1600px;
+}
+
+.legend {
+  width: 20%;
+  left: 0;
+  top: 0;
+}
+
+.hero {
+  width: 100%;
+}

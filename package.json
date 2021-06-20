@@ -1,0 +1,27 @@
+{
+  "name": "nike",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "firebase": "^8.6.8",
+    "next": "11.0.0",
+    "node-sass": "^4.14.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-loader-spinner": "^4.0.0",
+    "react-pro-sidebar": "^0.6.0",
+    "react-responsive-carousel": "^3.2.18",
+    "sass": "^1.35.1"
+  },
+  "devDependencies": {
+    "eslint": "7.28.0",
+    "eslint-config-next": "11.0.0"
+  }
+}

@@ -1,0 +1,74 @@
+.nikeStoreContainer {
+    justify-content: center;
+}
+.storeContentsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.shoeContainer {
+    width: calc(33.33333% - 20px);
+    flex-direction: column;
+    width: 490px;
+    margin: 20px 10px;
+    padding: 10px;
+    // border: 1px solid #d8e2dc;
+    border-radius: 5px;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    text-align: center;
+
+    // @media (max-width: 1120px) {
+    //     width: 430px;
+    // }
+
+    // @media (max-width: 880px) {
+    //     width: 350px;
+    // }
+}
+
+.shoeImageContainer {
+    height: 455px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @media (max-width: 1120px) {
+        height: 400px;
+    }
+
+    @media (max-width: 880px) {
+        height: 300px;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.shoeInfoContainer {
+    flex-direction: column;
+    width: 100%;
+
+    .shoeInfoText {
+        width:100%;
+        text-align: start;
+        padding: .3rem 0;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+        color: gray;
+    }
+}

@@ -1,0 +1,119 @@
+html {
+  font-size: 62.5%;
+}
+
+body,
+div,
+section,
+img,
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02rem;
+}
+
+body {
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  list-style: none;
+}
+
+footer {
+  height: 2rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+/* // button {
+//     position: relative;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+// } */
+
+button {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  font-size: 1rem;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: 1px solid black;
+  background: white;
+  color: black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: color 0.5s ease-out;
+}
+
+button:hover {
+  background: grey;
+  opacity: 0.2;
+  color: #131314;
+  transition: 1.5s;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+}
+
+button::after {
+  display: block;
+}
+
+.wrapper {
+  width: 92%;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+.flexContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.loadScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92vh;
+  width: 100vw;
+  background-color: white;
+}
+
+.navTopper {
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  width: 100%;
+  background: purple;
+}
