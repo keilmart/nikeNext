@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import shoeFirebaseCollection from "./api/firebase.js";
 import Homepage from "./Homepage.js";
 import NikeStore from "./NikeStore.js";
-// import Footer from "./Components/Footer.jsx";
+import Footer from "../Components/Footer.js";
 import "../styles/sass/app.scss";
 
 class App extends Component {
@@ -103,7 +103,7 @@ class App extends Component {
             <NikeStore nikeStoreProp={this.state.nikeShoes} />
           ) : null}
         </main>
-        {/* {this.state.displayHomepage ? null : <Footer />} */}
+        {this.state.displayHomepage ? null : <Footer />}
       </React.Fragment>
     );
   }

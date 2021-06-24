@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import Footer from "../Components/Footer.jsx";
 import "tailwindcss/tailwind.css";
 
 class Homepage extends Component {
@@ -53,7 +52,7 @@ class Homepage extends Component {
     // console.log(this.state.articles)
     return (
       <React.Fragment>
-        <main className="flexContent homepageContainer">
+        <main className="wrapper flexContent homepageContainer">
           <section className="carouselContainer">
             <Carousel
               autoPlay={true}
@@ -149,7 +148,6 @@ class Homepage extends Component {
             {/* <button className="searchForAPlant" onClick={this.sendDataToParent}>Shop</button> */}
           </section>
         </main>
-        <Footer />
       </React.Fragment>
     );
   }

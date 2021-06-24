@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import Loader from "react-loader-spinner";
-import Footer from "../Components/Footer.jsx";
+import Footer from "../Components/Footer.js";
 import "tailwindcss/tailwind.css";
 
 class NikeStore extends Component {
@@ -133,13 +133,12 @@ class NikeStore extends Component {
 
     return (
       <div>
-        <section>
-          <h1>
-            Men's Trainers & Shoes ({Object.keys(this.state.searchLists).length}
-            )
-          </h1>
+        <h1 className="text-4xl font-medium">
+          Men's Trainers & Shoes ({Object.keys(this.state.searchLists).length})
+        </h1>
+        <section className="flex">
           {/* Make this element sticky? */}
-          <form>
+          <form className="h-screen">
             <ProSidebar>
               <Menu>
                 <SubMenu title="Type">
@@ -186,29 +185,29 @@ class NikeStore extends Component {
             </ProSidebar>
           </form>
 
-          <ul>
+          <ul className="flex flex-wrap">
             {filteredList.map((item) => (
-              <div key={item.alt}>
-                <li className="flex flex-col">
-                  <div className="">
+              <li className="w-4/12 px-2" key={item.alt}>
+                <div className="flex flex-col">
+                  <div className="w-full">
                     <img src={item.image} alt={item.Alt} />
                   </div>
-                  <div className="flexContent shoeInfoContainer">
-                    <div className="shoeInfoText">
+                  <div className="flex shoeInfoContainer">
+                    <div className="py-4">
                       <h4>{item.name}</h4>
                     </div>
-                    <div className="shoeInfoText">
+                    <div className="pb-2">
                       <p>{item.style}</p>
                     </div>
-                    <div className="shoeInfoText">
-                      <p>{item.price}</p>
+                    <div className="">
+                      <p>{item.color}</p>
                     </div>
-                    <div className="shoeInfoText">
-                      <h4>{item.color}</h4>
+                    <div className="py-4">
+                      <h4>{item.price}</h4>
                     </div>
                   </div>
-                </li>
-              </div>
+                </div>
+              </li>
             ))}
           </ul>
 

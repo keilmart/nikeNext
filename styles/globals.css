@@ -1,3 +1,7 @@
+.pro-inner-item {
+  padding-left: 0;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -88,9 +92,13 @@ button::after {
 }
 
 .wrapper {
-  width: 92%;
+  width: 98%;
   margin: 0 auto;
   max-width: 1500px;
+}
+
+.pro-inner-item {
+  padding-left: 0;
 }
 
 .flexContent {
