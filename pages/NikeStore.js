@@ -3,6 +3,7 @@ import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import Loader from "react-loader-spinner";
 import Footer from "../Components/Footer.jsx";
+import "tailwindcss/tailwind.css";
 
 class NikeStore extends Component {
   constructor(props) {
@@ -132,16 +133,15 @@ class NikeStore extends Component {
 
     return (
       <div>
-        <section className="nikeStoreContainer flexContent">
+        <section>
           <h1>
             Men's Trainers & Shoes ({Object.keys(this.state.searchLists).length}
             )
           </h1>
-
           {/* Make this element sticky? */}
           <form>
             <ProSidebar>
-              <Menu className="wrapper">
+              <Menu>
                 <SubMenu title="Type">
                   <MenuItem icon="*">Dashboard</MenuItem>
                   {/* <MenuItem icon={<FaGem />}>Dashboard</MenuItem> */}
@@ -189,8 +189,8 @@ class NikeStore extends Component {
           <ul>
             {filteredList.map((item) => (
               <div key={item.alt}>
-                <li className="flexContent shoeContainer">
-                  <div className="shoeImageContainer">
+                <li className="flex flex-col">
+                  <div className="">
                     <img src={item.image} alt={item.Alt} />
                   </div>
                   <div className="flexContent shoeInfoContainer">
