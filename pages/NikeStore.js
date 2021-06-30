@@ -132,12 +132,12 @@ class NikeStore extends Component {
     }
 
     return (
-      <div>
+      <main>
         <h1 className="text-4xl font-medium">
           Men's Trainers & Shoes ({Object.keys(this.state.searchLists).length})
         </h1>
+        {/* Make this element sticky? */}
         <section className="flex">
-          {/* Make this element sticky? */}
           <form className="h-screen">
             <ProSidebar>
               <Menu>
@@ -187,7 +187,10 @@ class NikeStore extends Component {
 
           <ul className="flex flex-wrap">
             {filteredList.map((item) => (
-              <li className="w-4/12 px-2" key={item.alt}>
+              <li
+                className="w-full lg:w-6/12 xl:w-4/12 w-full px-2"
+                key={item.alt}
+              >
                 <div className="flex flex-col">
                   <div className="w-full">
                     <img src={item.image} alt={item.Alt} />
@@ -252,7 +255,7 @@ class NikeStore extends Component {
                     }  */}
         </section>
         <Footer />
-      </div>
+      </main>
     );
   }
 }
