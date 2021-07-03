@@ -4,10 +4,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "tailwindcss/tailwind.css";
 
-const Homepage = () => {
+const Homepage = (props) => {
+  const { nikeShoes } = props;
+
   const [isLoading, setIsLoading] = useState(true);
   const [articles, setArticles] = useState([]);
-  const [nikeShoes, setNikeShoes] = useState();
 
   useEffect(async () => {
     setIsLoading(true);
@@ -18,7 +19,7 @@ const Homepage = () => {
     setIsLoading(false);
   }, []);
 
-  // console.log(articles);
+  console.log(nikeShoes);
   return (
     <React.Fragment>
       <main className="wrapper flexContent homepageContainer">
@@ -52,9 +53,8 @@ const Homepage = () => {
 
         {/* call in more than 2 items, make a carousel to flip between */}
         <h1>Trending Now</h1>
-        {console.log(articles)}
         <section className="flexContent nikeStoreContainer">
-          {nikeShoes.slice(10, 12).map((singleShoe, index) => {
+          {nikeShoes.slice(10, 14).map((singleShoe, index) => {
             return (
               <div key={index} className="flexContent shoeContainerNews">
                 <div className="shoeImageContainer">

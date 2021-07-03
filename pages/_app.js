@@ -36,11 +36,14 @@ const App = () => {
           price: shoe.price,
           style: shoe.style,
         });
-
         setNikeShoes(nikeShoesFireStoreData);
       });
     });
-  });
+  }, []);
+
+  {
+    console.log(nikeShoes);
+  }
 
   const displayHomepageComponent = () => {
     setDisplayHomePage(true);
@@ -83,8 +86,8 @@ const App = () => {
         <div>hello</div>
       </div>
       <main className="wrapper">
-        {displayHomePage ? <Homepage {...nikeShoes} /> : null}
-        {displayNikeStore ? <NikeStore {...nikeShoes} /> : null}
+        {displayHomePage ? <Homepage nikeShoes={nikeShoes} /> : null}
+        {displayNikeStore ? <NikeStore nikeShoes={nikeShoes} /> : null}
       </main>
       {/* {displayHomepage ? null : <Footer />} */}
     </React.Fragment>
