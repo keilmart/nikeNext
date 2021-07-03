@@ -7,17 +7,18 @@ import "tailwindcss/tailwind.css";
 const Homepage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [articles, setArticles] = useState([]);
+  const [nikeShoes, setNikeShoes] = useState();
 
   useEffect(async () => {
     setIsLoading(true);
     const response = await axios.get(
       "https://newsapi.org/v2/everything?q=nike&pageSize=8&apiKey=db0bf3c8ac4842a0a4d506a38bea9735"
     );
-    setArticles(response.data);
+    setArticles(response.data.articles);
     setIsLoading(false);
-  });
+  }, []);
 
-  // console.log(this.state.articles)
+  // console.log(articles);
   return (
     <React.Fragment>
       <main className="wrapper flexContent homepageContainer">
@@ -49,10 +50,11 @@ const Homepage = () => {
           </Carousel>
         </section>
 
+        {/* call in more than 2 items, make a carousel to flip between */}
         <h1>Trending Now</h1>
-
-        {/* <section className="flexContent nikeStoreContainer">
-          {props.nikeStoreProp.slice(10, 12).map((singleShoe, index) => {
+        {console.log(articles)}
+        <section className="flexContent nikeStoreContainer">
+          {nikeShoes.slice(10, 12).map((singleShoe, index) => {
             return (
               <div key={index} className="flexContent shoeContainerNews">
                 <div className="shoeImageContainer">
@@ -75,7 +77,7 @@ const Homepage = () => {
               </div>
             );
           })}
-        </section> */}
+        </section>
 
         <section className="flexContent homepageContainer">
           <div className="carouselContainer hero">
@@ -99,13 +101,10 @@ const Homepage = () => {
                 rel="noreferrer"
               >
                 <div className="flexContent articleImageContainer">
-                  <img src={articleInfo.image} alt={articleInfo.title} />
+                  <img src={articleInfo.urlToImage} alt={articleInfo.title} />
                 </div>
                 <div className="articleInfoContainer">
                   <h2>{articleInfo.title}</h2>
-                  {/* <h2>{articleInfo.author}</h2> */}
-                  {/* <h4>{articleInfo.date}</h4> */}
-                  {/* <a href={articleInfo.url} target="_blank" rel="noreferrer"><h4>Link Here</h4></a> */}
                   <p>{articleInfo.description}</p>
                 </div>
               </a>
