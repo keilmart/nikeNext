@@ -6,57 +6,57 @@ import Footer from "../Components/Footer.js";
 import "tailwindcss/tailwind.css";
 
 const NikeStore = (props) => {
-  const { nikeShoes } = props;
+  // const { nikeShoes } = props;
 
-  const [searchLists, setSearchLists] = useState();
-  const [loading, setLoading] = useState(false);
-  const [activeFilter, setActiveFilter] = useState([]);
-  const [filterList, setFilteredList] = useState([
-    {
-      name: "Lifestyle",
-      value: "Lifestyle",
-      alt: "xyz",
-    },
-    {
-      name: "Athletics",
-      value: "Athletics",
-      alt: "yzx",
-    },
-    {
-      name: "Basketball",
-      value: "Basketball",
-      alt: "zxy",
-    },
-  ]);
+  // const [searchLists, setSearchLists] = useState();
+  const [loading, setLoading] = useState(true);
+  // const [activeFilter, setActiveFilter] = useState([]);
+  // const [filterList, setFilteredList] = useState([
+  //   {
+  //     name: "Lifestyle",
+  //     value: "Lifestyle",
+  //     alt: "xyz",
+  //   },
+  //   {
+  //     name: "Athletics",
+  //     value: "Athletics",
+  //     alt: "yzx",
+  //   },
+  //   {
+  //     name: "Basketball",
+  //     value: "Basketball",
+  //     alt: "zxy",
+  //   },
+  // ]);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     console.log("This will run after 1 second!");
-  //   }, 1000);
-  //   setLoading(false);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log("This will run after 1 second!");
+    }, 1000);
+    setLoading(false);
+    return () => clearTimeout(timer);
+  }, []);
 
-  // const onFilterChange = (filter) => {
-  //   // const { filterList, activeFilter } = this.state;
-  //   if (filter === "ALL") {
-  //     if (activeFilter.length === filterList.length) {
-  //       // this.setState({ activeFilter: [] });
-  //       setActiveFilter([]);
-  //     } else {
-  //       setActiveFilter(filterList.map((filter) => filter.value));
-  //     }
-  //   } else {
-  //     if (activeFilter.includes(filter)) {
-  //       const filterIndex = activeFilter.indexOf(filter);
-  //       const newFilter = [...activeFilter];
-  //       newFilter.splice(filterIndex, 1);
-  //       setActiveFilter(newFilter);
-  //     } else {
-  //       setActiveFilter([...activeFilter, filter]);
-  //     }
-  //   }
-  // };
+  const onFilterChange = (filter) => {
+    // const { filterList, activeFilter } = this.state;
+    if (filter === "ALL") {
+      if (activeFilter.length === filterList.length) {
+        // this.setState({ activeFilter: [] });
+        setActiveFilter([]);
+      } else {
+        setActiveFilter(filterList.map((filter) => filter.value));
+      }
+    } else {
+      if (activeFilter.includes(filter)) {
+        const filterIndex = activeFilter.indexOf(filter);
+        const newFilter = [...activeFilter];
+        newFilter.splice(filterIndex, 1);
+        setActiveFilter(newFilter);
+      } else {
+        setActiveFilter([...activeFilter, filter]);
+      }
+    }
+  };
 
   // filteringShoeCategoryFunction = () => {
   //   let allShoeCategories = searchLists.filter(
@@ -76,9 +76,6 @@ const NikeStore = (props) => {
   //   // });
   // };
 
-  // console.log(this.state.filterList)
-  // console.log(this.state.selectedStyleCategory)
-
   if (loading) {
     return (
       <div className="loadScreen">
@@ -88,14 +85,14 @@ const NikeStore = (props) => {
   }
 
   // const { filterList, activeFilter } = this.state;
-  let filteredList;
-  if (activeFilter.length === 0 || activeFilter.length === filterList.length) {
-    setFilteredList(searchLists);
-  } else {
-    filteredList = searchLists.filter((item) =>
-      activeFilter.includes(item.style)
-    );
-  }
+  // let filteredList;
+  // if (activeFilter.length === 0 || activeFilter.length === filterList.length) {
+  //   setFilteredList(searchLists);
+  // } else {
+  //   filteredList = searchLists.filter((item) =>
+  //     activeFilter.includes(item.style)
+  //   );
+  // }
 
   // console.log(nikeShoes);
   return (
@@ -152,7 +149,7 @@ const NikeStore = (props) => {
           </ProSidebar>
         </form> */}
 
-        <ul className="flex flex-wrap">
+        {/* <ul className="flex flex-wrap">
           {nikeShoes.map((item) => (
             <li
               className="w-full lg:w-6/12 xl:w-4/12 w-full px-2"
@@ -179,7 +176,7 @@ const NikeStore = (props) => {
               </div>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </section>
       <Footer />
     </main>

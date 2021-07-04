@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Footer from "../Components/Footer.js";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "tailwindcss/tailwind.css";
@@ -19,7 +20,7 @@ const Homepage = (props) => {
     setIsLoading(false);
   }, []);
 
-  console.log(nikeShoes);
+  // console.log(nikeShoes);
   return (
     <React.Fragment>
       <main className="wrapper flexContent homepageContainer">
@@ -112,6 +113,7 @@ const Homepage = (props) => {
           })}
           {/* <button className="searchForAPlant" onClick={this.sendDataToParent}>Shop</button> */}
         </section>
+        <Footer />
       </main>
     </React.Fragment>
   );
